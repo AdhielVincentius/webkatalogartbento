@@ -839,3 +839,444 @@ body {
 .product-card {
   animation: fadeIn 0.5s ease-out;
 }
+
+/* ========== SIZE SELECTION STYLES ========== */
+.size-selection {
+  margin: 15px 0;
+  padding: 15px;
+  background-color: #f9f5f0;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+.size-selection h5 {
+  margin-bottom: 10px;
+  color: #5d4037;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.size-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.size-option {
+  padding: 8px 15px;
+  background-color: white;
+  border: 2px solid #d7ccc8;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #5d4037;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+
+.size-option:hover {
+  border-color: #8d6e63;
+  background-color: #f5f0eb;
+}
+
+.size-option.active {
+  background-color: #8d6e63;
+  color: white;
+  border-color: #6d4c41;
+}
+
+.size-price {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 3px;
+  color: inherit;
+}
+
+/* Harga terpilih */
+.selected-price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+  padding: 12px 15px;
+  background: linear-gradient(135deg, #f5f0eb 0%, #e8dfd6 100%);
+  border-radius: 10px;
+  border-left: 4px solid #8d6e63;
+}
+
+.price-label {
+  font-weight: 600;
+  color: #5d4037;
+  font-size: 0.95rem;
+}
+
+.current-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #6d4c41;
+  flex: 1;
+}
+
+.size-info {
+  font-size: 0.85rem;
+  color: #795548;
+  font-style: italic;
+}
+
+/* Update product footer untuk ukuran */
+.product-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #25D366;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.whatsapp-btn:hover {
+  background-color: #128C7E;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+/* Update product description untuk ruang lebih */
+.product-description {
+  color: #795548;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  min-height: 80px;
+}
+
+/* Responsive untuk size options */
+@media (max-width: 768px) {
+  .size-options {
+    gap: 8px;
+  }
+  
+  .size-option {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    min-width: 70px;
+  }
+  
+  .size-price {
+    font-size: 0.75rem;
+  }
+  
+  .selected-price {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .current-price {
+    font-size: 1.3rem;
+  }
+  
+  .whatsapp-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .size-options {
+    justify-content: center;
+  }
+  
+  .size-option {
+    flex: 1;
+    min-width: auto;
+    max-width: 120px;
+  }
+  
+  .selected-price {
+    padding: 10px;
+  }
+  
+  .price-label {
+    font-size: 0.9rem;
+  }
+  
+  .current-price {
+    font-size: 1.2rem;
+  }
+  
+  .size-info {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .size-option {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+  
+  .size-price {
+    font-size: 0.7rem;
+  }
+}
+
+/* ========== IMAGE TRANSITION STYLES ========== */
+.product-image-display {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+/* Animation untuk perubahan gambar */
+@keyframes fadeIn {
+  from {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.product-image-display.changing {
+  animation: fadeIn 0.3s ease;
+}
+
+/* Style untuk image container */
+.product-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background-color: #f5f0eb; /* Background color untuk loading */
+}
+
+/* Responsive untuk product image */
+@media (max-width: 768px) {
+  .product-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-image {
+    height: 160px;
+  }
+}
+
+/* ========== TERMS & CONDITIONS SECTION ========== */
+.terms-section {
+  margin-bottom: 60px;
+  padding: 30px;
+  background-color: #f5f0eb;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0;
+}
+
+.terms-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #8d6e63;
+}
+
+.terms-icon {
+  font-size: 2rem;
+  color: #8d6e63;
+}
+
+.terms-header h3 {
+  font-size: 1.8rem;
+  color: #5d4037;
+  margin: 0;
+}
+
+.terms-content {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #d7ccc8;
+}
+
+.terms-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.terms-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.term-item {
+  padding: 20px;
+  background-color: #f9f5f0;
+  border-radius: 10px;
+  border-left: 4px solid #8d6e63;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.term-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.term-item h4 {
+  color: #5d4037;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.term-item p {
+  color: #795548;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.term-item strong {
+  color: #5d4037;
+  font-weight: 600;
+}
+
+.terms-note {
+  padding: 20px;
+  background-color: #fff8e1;
+  border-radius: 10px;
+  border-left: 4px solid #ffb300;
+  margin-top: 20px;
+}
+
+.terms-note p {
+  color: #5d4037;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.terms-note strong {
+  color: #5d4037;
+  font-weight: 600;
+}
+
+/* Responsive untuk terms section */
+@media (max-width: 992px) {
+  .terms-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .terms-section {
+    padding: 25px 20px;
+  }
+  
+  .terms-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .terms-header h3 {
+    font-size: 1.6rem;
+  }
+  
+  .term-item {
+    padding: 15px;
+  }
+  
+  .term-item h4 {
+    font-size: 1rem;
+  }
+  
+  .terms-note {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .terms-section {
+    padding: 20px 15px;
+    margin-bottom: 40px;
+  }
+  
+  .terms-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .terms-header h3 {
+    font-size: 1.4rem;
+  }
+  
+  .terms-content {
+    padding: 15px;
+  }
+  
+  .term-item {
+    padding: 12px;
+  }
+  
+  .term-item h4 {
+    font-size: 0.95rem;
+  }
+  
+  .term-item p {
+    font-size: 0.9rem;
+  }
+  
+  .terms-note p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Update untuk emoji di judul terms */
+.term-item h4::before {
+  content: attr(data-emoji);
+  font-size: 1.2rem;
+}
+
+/* Alternatif styling untuk terms */
+@media (max-width: 400px) {
+  .terms-grid {
+    gap: 15px;
+  }
+  
+  .term-item h4 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+
