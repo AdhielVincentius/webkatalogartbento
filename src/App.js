@@ -3,8 +3,7 @@ import "./App.css";
 import { 
   FaWhatsapp, 
   FaTag, 
-  FaPhone, 
-  FaEnvelope, 
+  FaPhone,  
   FaInstagram, 
   FaFacebook, 
   FaInfoCircle
